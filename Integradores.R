@@ -40,9 +40,6 @@ repeat {
   }
 }
 
-#---------- Ejercicio 4 ----------
-rm(list=ls())
-#Programa en el que se pregunte al usuario por una frase y una letra, y muestre por pantalla el número de veces que aparece la letra en la frase
 
 #---------- Ejercicio 4 ----------
 rm(list=ls())
@@ -50,14 +47,28 @@ rm(list=ls())
 
 frase<-readline("Ingrese una frase")
 letra<-readline("Ingrese una letra")
+<<<<<<< HEAD
 sep<-strsplit(frase,"") #Para separar los caracteres de frase
 rep<-numeric()
 
 for(i in nchar(sep)){
   if (i==letra){
     rep[i]<-rep[i] + 1
+=======
+fras<-strsplit(frase,"")[[1]] #Para separar los caracteres de frase
+
+c<-0
+for(i in fras){
+  if (i==letra){
+    c <- c + 1
+>>>>>>> a4a4ec0f32f5e767c1af22c802665d0404d28dc5
   }
+  print(c)
 }
+<<<<<<< HEAD
+=======
+print(c)
+>>>>>>> a4a4ec0f32f5e767c1af22c802665d0404d28dc5
 
 
 
