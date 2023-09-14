@@ -50,17 +50,15 @@ rm(list=ls())
 
 frase<-readline("Ingrese una frase")
 letra<-readline("Ingrese una letra")
-fras<-strsplit(frase,"") #Para separar los caracteres de frase
-print(fras)
+sep<-strsplit(frase,"") #Para separar los caracteres de frase
+rep<-numeric()
 
-for(i in fras){
+for(i in nchar(sep)){
   if (i==letra){
-    c[i]= c[i] + i
+    rep[i]<-rep[i] + 1
   }
 }
-print(c)
 
-fras[[1]][i]
 
 
 
