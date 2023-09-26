@@ -15,15 +15,18 @@
 
 rm(list=ls()) #Limpio el environment
 #setwd("/home/clinux01/Escritorio/Cande Labo Jueves/") #Seteo el directorio}
-setwd("/Users/cande/Desktop/Cande/UBA/2do año/Labo/Práctica mia/")
+#setwd("/Users/cande/Desktop/Cande/UBA/2do año/Labo/Práctica mia/")
+setwd("/home/clinux01/Escritorio/Cande Labo Martes/Practica_2/")
 #Ingreso de los dias
 diaingresado<-as.integer(readline("Ingrese un día del mes de Agosto"))
 
 #Para que el ingreso de dias sea entre los dias reales de agosto, es decir entre el 1 y el 31
 while(diaingresado <1 | diaingresado >31){
-  diaingresado <-as.integer(readline("Ingrese un dia del mes de Agosto"))
-  if(diaingresado <=31 & diaingresado <=1){
+  diaingresado <-as.integer(readline("Ingrese nuevamente un dia del mes de Agosto"))
+  if(diaingresado <=31 & diaingresado >=1){
     break
+  } else { #Esto chequear
+    diaingresado <-as.integer(readline("Ingrese nuevamente un dia del mes de Agosto"))
   }
 }
 
@@ -31,15 +34,18 @@ while(diaingresado <1 | diaingresado >31){
 agosto <- seq(1:31)
 temperatura<-0
 for (dia in agosto) {
-  t<-as.numeric(readline("Ingresela temperatura"))
-  temperatura[dia]<-t
+  t<-as.numeric(readline("Ingrese la temperatura")) #as.numeric () 
+  while (is.na(t)){ #poner (na()== TRUE) es lo mismo pero es mejor poner is.na()
+    t<-as.numeric(readline("Ingrese nuevamente la temperatura")) #as.numeric () 
+  }
+  temperatura<-temperatura + t
   if (dia==diaingresado){
     tempquiero<-t
   }
 }
 
 #Calculo del promedio 
-prom<-mean(temperatura)
+prom<-temperatura/31 #divido por 31 dias de agosto
 
 #Impresión por consola, sin las comillas
 
