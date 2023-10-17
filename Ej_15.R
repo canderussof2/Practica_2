@@ -1,8 +1,8 @@
 #Ej 15 practica 2
 
 rm(list=ls())
-setwd("/Users/Usuario/Desktop/Cande/Laboratorio de Procesamiento de Información meteorológica/Practica_2/")
-
+#setwd("/Users/Usuario/Desktop/Cande/Laboratorio de Procesamiento de Información meteorológica/Practica_2/")
+setwd("/home/clinux01/Escritorio/Cande Labo Martes/Practica_2/")
 #Prog pida ingreso nombre y apellido de un estudiante y la cantidad de materias
 #aprobo. Luego pedir el ingreso nombre de materia y nota que obtuvo. 
 #Finalmente, imprimir el siguiente mensaje (Sin las comillas):
@@ -63,8 +63,8 @@ if(promedio>8.41){
 }  
 #-------------------------------------------------------------------------------
 rm(list=ls())
-setwd("/Users/Usuario/Desktop/Cande/Laboratorio de Procesamiento de Información meteorológica/Practica_2/")
-
+#setwd("/Users/Usuario/Desktop/Cande/Laboratorio de Procesamiento de Información meteorológica/Practica_2/")
+setwd("/home/clinux01/Escritorio/Cande Labo Martes/Practica_2/")
 #SIN VECTORES
 apellido<-readline("Ingrese su apellido ")
 nombre<-readline("Ingrese su nombre ")
@@ -84,17 +84,18 @@ if (cant_materias==0){
   secuencia<-seq(1,cant_materias,by=1)
   notas<-0
   for(nota in secuencia){
-    notas[nota]<-as.integer(readline("Ingrese la nota de cada materia "))
-    while(is.na(cant_materias)){
-      if(!is.na(cant_materias)){
+    nota<-as.integer(readline("Ingrese la nota de cada materia "))
+    while(is.na(nota)){
+      if(!is.na(nota)){
         break
       } else {
-       notas[nota]<-as.integer(readline("Ingrese nuevamente la nota de cada materia "))
+       nota<-as.integer(readline("Ingrese nuevamente la nota de cada materia "))
       } 
     }
+    notas<-notas+nota
   }
   promedio<-notas/cant_materias
-  
+  print(notas)
   if(promedio>8.41){
     cat("El estudiante", nombre,apellido,"aprobó",cant_materias,"materias y su promedio es mayor al promedio
       historico","\n")
